@@ -1,7 +1,7 @@
 # Set config directories to ~/.config
 XDG_CONFIG_HOME="$HOME/.config"
 
-# Use zoxide a smarter cd command
+# Use Zoxide
 # https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
 
@@ -25,10 +25,13 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
     [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
     [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
 
-# Use ruby installed via brew instead of system version
+# Use Conda
+# https://github.com/conda/conda
+eval "$(conda "shell.$(basename "${SHELL}")" hook)"
+
+# Use Ruby installed via brew instead of system version
 export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
 
-# Use non-elevated rights for ruby gems
+# Use non-elevated rights for Ruby Gems
 export GEM_HOME="$HOME/.gem"
 export PATH="$GEM_HOME/bin:$PATH"
-
