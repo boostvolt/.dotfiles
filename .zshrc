@@ -1,6 +1,10 @@
 # Set config directories to ~/.config
 XDG_CONFIG_HOME="$HOME/.config"
 
+# Use zoxide a smarter cd command
+# https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init zsh)"
+
 # Initialize ZSH syntax highlighting
 # https://github.com/zsh-users/zsh-syntax-highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
