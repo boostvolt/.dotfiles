@@ -9,10 +9,9 @@ eval "$(zoxide init zsh)"
 # https://github.com/zsh-users/zsh-syntax-highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Initialize ZSH autosuggestions
-# https://github.com/zsh-users/zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '\t' autosuggest-accept
+# Initialize ZSH completions
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Use Starship
 # https://github.com/starship/starship
