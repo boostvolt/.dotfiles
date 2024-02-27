@@ -9,10 +9,8 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# Use Starship
-# https://github.com/starship/starship
-export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
-eval "$(starship init zsh)"
+# Load shared aliases for shells
+[[ -f ~/.aliases ]] && source ~/.aliases
 
 # Load NVM (node version manager)
 # https://github.com/nvm-sh/nvm
@@ -30,3 +28,8 @@ export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
 # Use non-elevated rights for Ruby Gems
 export GEM_HOME="$HOME/.gem"
 export PATH="$GEM_HOME/bin:$PATH"
+
+# Use Starship
+# https://github.com/starship/starship
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+eval "$(starship init zsh)"

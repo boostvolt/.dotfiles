@@ -1,0 +1,17 @@
+# Better ls command
+alias ls='eza --git --icons --color=always --group-directories-first'
+
+# Alias ll to a better variant
+alias ll='ls -la'
+
+# Convenience for lazygit
+alias lg='lazygit'
+
+# Useful parent cd aliases
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../../'
+
+# Convenience alias for Spring projects
+alias spring-dev="./gradlew bootRun --args='--spring.profiles.active=dev'"
