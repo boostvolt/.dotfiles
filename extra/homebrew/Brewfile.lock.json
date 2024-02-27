@@ -1853,6 +1853,15 @@
           }
         }
       },
+      "discord": {
+        "version": "0.0.295",
+        "options": {
+          "full_name": "discord",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
       "keepassxc": {
         "version": "2.7.6",
         "options": {
@@ -1902,6 +1911,123 @@
         "version": "17.48.15,17.0.10",
         "options": {
           "full_name": "zulu-jdk17",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "figma": {
+        "version": "116.15.15",
+        "options": {
+          "full_name": "figma",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "macupdater": {
+        "version": "3.2.6",
+        "options": {
+          "full_name": "macupdater",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "sirimote": {
+        "version": "1.4.5",
+        "options": {
+          "full_name": "sirimote",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "bruno": {
+        "version": "1.10.0",
+        "options": {
+          "full_name": "bruno",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "monitorcontrol": {
+        "version": "4.2.0",
+        "options": {
+          "full_name": "monitorcontrol",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "jetbrains-toolbox": {
+        "version": "2.2.2,2.2.2.20062",
+        "options": {
+          "full_name": "jetbrains-toolbox",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "intellij-idea": {
+        "version": "2023.3.4,233.14475.28",
+        "options": {
+          "full_name": "intellij-idea",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "clion": {
+        "version": "2023.3.4,233.14475.31",
+        "options": {
+          "full_name": "clion",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "pycharm": {
+        "version": "2023.3.4,233.14475.56",
+        "options": {
+          "full_name": "pycharm",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "android-studio": {
+        "version": "2023.1.1.28",
+        "options": {
+          "full_name": "android-studio",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "iterm2": {
+        "version": "3.4.23",
+        "options": {
+          "full_name": "iterm2",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "citrix-workspace": {
+        "version": "23.11.0.67",
+        "options": {
+          "full_name": "citrix-workspace",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "notion": {
+        "version": "3.2.1",
+        "options": {
+          "full_name": "notion",
           "args": {
             "appdir": "/Applications"
           }
