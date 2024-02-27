@@ -1,0 +1,60 @@
+[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
+	path = ~/.gitconfig-github
+
+[includeIf "hasconfig:remote.*.url:git@git.swisscom.com:*/**"]
+	path = ~/.gitconfig-swisscom
+
+[includeIf "hasconfig:remote.*.url:git@github.zhaw.ch:*/**"]
+	path = ~/.gitconfig-zhaw
+
+[rebase]
+	# Automatically squash commits created with "git commit --squash" during a rebase.
+  	autosquash = true
+
+[fetch]
+	# Automatically remove remote-tracking references that no longer exist on the remote when fetching.
+	prune = true
+
+[core]
+	# Use the file at "~/.gitignore" as the global ignore file.
+	excludesFile = ~/.gitignore
+	# Do not ignore the case of filenames.
+	ignorecase = false
+	# Convert CRLF line endings to LF on commit and leave them as is on checkout.
+	autocrlf = input
+	# Do not precompose Unicode characters in filenames (relevant on macOS).
+	precomposeunicode = false
+	# Enables the untracked cache to speed up the "git status" command.
+	untrackedCache = true
+
+[filter "lfs"]
+	# Use "git-lfs clean" to convert large files to their LFS pointer before they're committed.
+	clean = git-lfs clean -- %f
+	# Use "git-lfs smudge" to convert LFS pointers back to their original files on checkout.
+	smudge = git-lfs smudge -- %f
+	# Use "git-lfs filter-process" for the entire lifecycle of LFS files.
+	process = git-lfs filter-process
+	# Require the LFS filter to succeed for Git commands to succeed.
+	required = true
+
+[help]
+	# Automatically correct mistyped Git commands after a 0.1-second delay.
+	autocorrect = 1
+
+[push]
+	# When pushing without specifying a branch, only push the current branch to its upstream branch.
+	default = simple
+	# Automatically set up a tracking branch when pushing a new branch.
+	autoSetupRemote = true
+
+[gpg]
+	# Sets the GPG format to "ssh".
+  	format = ssh
+
+[gpg "ssh"]
+	# Specifies the 1Password program to be used for SSH with GPG.
+  	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[alias]
+	# Amends the last commit without changing its message.
+	amend = commit --amend --no-edit
