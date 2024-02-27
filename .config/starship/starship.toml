@@ -1,160 +1,159 @@
-[aws]
-symbol = "  "
+"$schema" = 'https://starship.rs/config-schema.json'
 
-[buf]
-symbol = " "
+# https://starship.rs/config/#prompt
+format = """$shell$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$direnv\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$status\
+$container\
+$character"""
 
-[c]
-symbol = " "
+# Inserts a blank line between shell prompts
+add_newline = true
 
-[conda]
-symbol = " "
+# --------------------------------------
+# ------ Statusline configuration ------
+# --------------------------------------
 
-[crystal]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[directory]
-read_only = " 󰌾"
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[fennel]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
-
-[git_branch]
-symbol = " "
-
-[golang]
-symbol = " "
-
-[guix_shell]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[haxe]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[hostname]
-ssh_symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[kotlin]
-symbol = " "
-
-[lua]
-symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
-[nim]
-symbol = "󰆥 "
-
-[nix_shell]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[ocaml]
-symbol = " "
+[os]
+disabled = false
 
 [os.symbols]
-Alpaquita = " "
-Alpine = " "
-Amazon = " "
-Android = " "
-Arch = " "
-Artix = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Windows = "󰍲 "
+Macos = " 󰀵 "
+
+[directory]
+format = "[ $path ]($style)"
+truncation_symbol = "…/"
+truncation_length = 3
+
+[git_branch]
+symbol = ""
+#truncation_length = 24
+format = "[[$symbol $branch(:$remote_branch)](fg:bright-purple)]($style) "
+
+[git_status]
+deleted = "✖"
+format = "[($all_status$ahead_behind )]($style)"
+
+[cmd_duration]
+format = "[$duration]($style)"
+
+# -----------------------------------
+# ------ Language integrations ------
+# -----------------------------------
 
 [package]
-symbol = "󰏗 "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[pijul_channel]
-symbol = " "
+format = '[$version](fg:white) '
 
 [python]
-symbol = " "
+symbol = ""
+format = '| [[$symbol ($version)](fg:yellow)]($style) '
 
-[rlang]
-symbol = "󰟔 "
+[nodejs]
+symbol = ""
+format = '| [[$symbol ($version)](fg:green)]($style) '
 
-[ruby]
-symbol = " "
+[golang]
+symbol = ""
+format = '| [[$symbol ($version)](fg:bright-blue)]($style) '
 
-[rust]
-symbol = " "
+[java]
+symbol = ""
+format = '| [[$symbol ($version)](fg:bright-red)]($style) '
+
+[bun]
+symbol = ""
+
+[kotlin]
+symbol = ""
 
 [scala]
-symbol = " "
+symbol = ""
 
-[swift]
-symbol = " "
+[rust]
+symbol = ""
+format = '| [[$symbol ($version)](fg:red)]($style) '
 
-[zig]
-symbol = " "
+[gradle]
+symbol = ""
+format = '| [[$symbol ($version)](fg:yellow)]($style) '
+
+[docker_context]
+disabled = true
