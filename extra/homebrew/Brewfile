@@ -1,0 +1,1 @@
+cask_args appdir: '/Applications'

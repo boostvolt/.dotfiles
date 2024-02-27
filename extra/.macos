@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
+######################################################################
+# Finder Settings                                                    #
+######################################################################
+
+# Set default view mode to list mode
+defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+
+# Keep folders always at the top
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
+
+# Set default search context to current path instead of whole mac
+defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+
+# Automatically delete items in the Bin after 30 days
+defaults write com.apple.finder "FXRemoveOldTrashItems" -bool "true"
+
+# Do not display warning when changing a file type
+defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
+
+# Enable spring loading for directories
+defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+######################################################################
+# Terminal & iTerm 2                                                 #
+######################################################################
+
+# Only use UTF-8 in Terminal.app
+defaults write com.apple.terminal StringEncodings -array 4
+
+# Don’t display the annoying prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+######################################################################
+# Time Machine                                                       #
+######################################################################
+
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+######################################################################
+# Activity Monitor                                                   #
+######################################################################
+
+# Show the main window when launching Activity Monitor
+defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
+
+# Show all processes in Activity Monitor
+defaults write com.apple.ActivityMonitor ShowCategory -int 0
+
+# Sort Activity Monitor results by CPU usage
+defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+defaults write com.apple.ActivityMonitor SortDirection -int 0
+
+######################################################################
+# Mac App Store                                                      #
+######################################################################
+
+# Enable the WebKit Developer Tools in the Mac App Store
+defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+
+# Enable the automatic update check
+defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# Install System data files & security updates
+defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1

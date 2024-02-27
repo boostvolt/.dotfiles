@@ -31,5 +31,5 @@ export PATH="$GEM_HOME/bin:$PATH"
 
 # Use Starship
 # https://github.com/starship/starship
-export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+export STARSHIP_CONFIG="$HOME/starship/starship.toml"
 eval "$(starship init zsh)"

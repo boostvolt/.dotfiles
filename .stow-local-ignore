@@ -24,3 +24,8 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+^/.editorconfig
+^/.gitconfig
+
+/extra       # additional installation files not needed to copy
+/Makefile    # utility tool
