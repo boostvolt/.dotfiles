@@ -14,7 +14,7 @@
         "revision": "0de8c6fe4a0acabfb3a0bdbaad9210fcbbc10a2f"
       },
       "homebrew/cask-versions": {
-        "revision": "9e9aa46a9adbc2f87b54045cc000273fa1e3ff8a"
+        "revision": "1c2668958407592ca2d759210de5335b1481c381"
       },
       "homebrew/core": {
         "revision": "23b258b71ecba20800e336512a8f51681acf4488"
@@ -1890,7 +1890,7 @@
         }
       },
       "miniconda": {
-        "version": "py311_23.11.0-2",
+        "version": "py312_24.1.2-0",
         "options": {
           "full_name": "miniconda",
           "args": {
@@ -2032,6 +2032,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "zulu-jdk21": {
+        "version": "21.32.17,21.0.2",
+        "options": {
+          "full_name": "zulu-jdk21",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
@@ -2154,7 +2163,7 @@
   "system": {
     "macos": {
       "sonoma": {
-        "HOMEBREW_VERSION": "4.2.10-33-gf138059",
+        "HOMEBREW_VERSION": "4.2.10-35-gece7e5d",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.1.0.0.1.1700200546",
