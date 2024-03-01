@@ -1594,13 +1594,14 @@
       "visualstudioexptteam.intellicode-api-usage-examples": null,
       "visualstudioexptteam.vscodeintellicode": null,
       "vscode-icons-team.vscode-icons": null,
-      "yinfei.luahelper": null
+      "yinfei.luahelper": null,
+      "hediet.vscode-drawio": null
     }
   },
   "system": {
     "macos": {
       "sonoma": {
-        "HOMEBREW_VERSION": "4.2.10-81-gf1eea64",
+        "HOMEBREW_VERSION": "4.2.10-87-g6c6c418",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.1.0.0.1.1700200546",
