@@ -1,11 +1,19 @@
 [includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
 	path = ~/.gitconfig-github
 
+[includeIf "hasconfig:remote.*.url:git@github.zhaw.ch:*/**"]
+	path = ~/.gitconfig-zhaw
+
 [includeIf "hasconfig:remote.*.url:git@git.swisscom.com:*/**"]
 	path = ~/.gitconfig-swisscom
 
-[includeIf "hasconfig:remote.*.url:git@github.zhaw.ch:*/**"]
-	path = ~/.gitconfig-zhaw
+[user]
+	# Set the default name for git to use when creating new commits.
+	name = Jan Kott
+
+[commit]
+	# Sign all commits by default.
+	gpgsign = true
 
 [rebase]
 	# Automatically squash commits created with "git commit --squash" during a rebase.
