@@ -2077,12 +2077,30 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "spotify": {
+        "version": "1.2.32.997,4c6498b6,1708",
+        "options": {
+          "full_name": "spotify",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "pika": {
+        "version": "0.0.16",
+        "options": {
+          "full_name": "pika",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
       "1Password for Safari": {
         "id": "1569813296",
-        "version": "2.20.0"
+        "version": "2.21.0"
       },
       "AdGuard for Safari": {
         "id": "1440147259",
@@ -2131,6 +2149,10 @@
       "Xcode": {
         "id": "497799835",
         "version": "15.2"
+      },
+      "Goodnotes": {
+        "id": "1444383602",
+        "version": "6.3.6"
       }
     },
     "vscode": {
@@ -2199,7 +2221,7 @@
   "system": {
     "macos": {
       "sonoma": {
-        "HOMEBREW_VERSION": "4.2.10-75-g99baaf3",
+        "HOMEBREW_VERSION": "4.2.10-81-gf1eea64",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.1.0.0.1.1700200546",

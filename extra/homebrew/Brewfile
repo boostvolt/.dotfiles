@@ -55,14 +55,17 @@ cask "miniconda"
 cask "monitorcontrol"
 cask "notion"
 cask "obsidian"
+cask "pika"
 cask "pycharm"
 cask "sf-symbols"
 cask "sirimote"
+cask "spotify"
 cask "zulu-jdk17"
 cask "zulu-jdk21"
 
 mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
+mas "Goodnotes", id: 1444383602
 mas "Keynote", id: 409183694
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
@@ -76,7 +79,6 @@ mas "Xcode", id: 497799835
 
 vscode "antfu.file-nesting"
 vscode "christian-kohler.npm-intellisense"
-vscode "clinyong.vscode-css-modules"
 vscode "dbaeumer.vscode-eslint"
 vscode "eamodio.gitlens"
 vscode "esbenp.prettier-vscode"
@@ -86,7 +88,6 @@ vscode "github.copilot-chat"
 vscode "github.github-vscode-theme"
 vscode "github.vscode-github-actions"
 vscode "github.vscode-pull-request-github"
-vscode "james-yu.latex-workshop"
 vscode "jock.svg"
 vscode "ms-ceintl.vscode-language-pack-de"
 vscode "ms-vscode.test-adapter-converter"

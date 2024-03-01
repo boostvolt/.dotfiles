@@ -31,7 +31,13 @@ cd .dotfiles
 make macos
 ```
 
-### 4. Apply or update setup configuration
+### 4. Install Homebrew packages
+
+```sh
+make brew
+```
+
+### 5. Apply or update setup configuration
 
 ```sh
 make install
