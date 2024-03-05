@@ -5,6 +5,10 @@ XDG_CONFIG_HOME="$HOME/.config"
 # https://github.com/zsh-users/zsh-syntax-highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Corrects errors in previous console commands.
+# https://github.com/nvbn/thefuck
+eval "$(thefuck --alias fuck)"
+
 # Initialize ZSH completions
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

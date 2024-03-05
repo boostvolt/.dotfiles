@@ -7,6 +7,11 @@ alias ll='ls -la'
 # Convenience for lazygit
 alias lg='lazygit'
 
+# Always use nvim
+alias vim='nvim'
+alias vi='nvim'
+alias v='nvim'
+
 # Useful parent cd aliases
 alias ..='cd ..'
 alias ...='cd ../../'

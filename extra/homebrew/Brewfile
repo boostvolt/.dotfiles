@@ -26,30 +26,28 @@ brew "lazygit"
 brew "luarocks"
 brew "maclaunch"
 brew "mas"
-brew "maven"
 brew "neovim"
 brew "nvm"
 brew "pnpm"
 brew "ruff"
 brew "starship"
 brew "stow"
+brew "thefuck"
 brew "watchman"
 brew "zsh-syntax-highlighting"
 cask "1password-cli"
 cask "adobe-creative-cloud"
 cask "android-studio", args: { appdir: "/Applications" }
+cask "arc"
 cask "bruno", args: { appdir: "/Applications" }
 cask "citrix-workspace", args: { appdir: "/Applications" }
 cask "clion", args: { appdir: "/Applications" }
 cask "discord", args: { appdir: "/Applications" }
 cask "docker", args: { appdir: "/Applications" }
 cask "figma", args: { appdir: "/Applications" }
-cask "google-chrome", args: { appdir: "/Applications" }
 cask "intellij-idea", args: { appdir: "/Applications" }
 cask "iterm2", args: { appdir: "/Applications" }
-cask "jetbrains-toolbox", args: { appdir: "/Applications" }
 cask "keepassxc"
-cask "mactex-no-gui"
 cask "macupdater", args: { appdir: "/Applications" }
 cask "miniconda"
 cask "monitorcontrol", args: { appdir: "/Applications" }
