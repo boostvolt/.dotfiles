@@ -59,6 +59,7 @@ cask "sf-symbols", args: { appdir: "/Applications" }
 cask "sirimote", args: { appdir: "/Applications" }
 cask "spotify", args: { appdir: "/Applications" }
 cask "utm"
+cask "whatsapp"
 cask "zulu-jdk17"
 cask "zulu-jdk21", args: { appdir: "/Applications" }
 mas "1Password for Safari", id: 1569813296
