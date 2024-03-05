@@ -29,6 +29,14 @@ export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
 export GEM_HOME="$HOME/.gem"
 export PATH="$GEM_HOME/bin:$PATH"
 
+# Overrides the brew command to automatically dump the Brewfile after installing or uninstalling packages.
+function brew() {
+    command brew "$@"
+    if [[ "$1" == "install" || "$1" == "uninstall" ]]; then
+        command brew bundle dump --force --file="$HOME/.dotfiles/extra/homebrew/Brewfile"
+    fi
+}
+
 # Use Starship
 # https://github.com/starship/starship
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
