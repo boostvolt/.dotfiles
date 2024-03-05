@@ -39,6 +39,12 @@ defaults write com.apple.terminal StringEncodings -array 4
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
+# Set the custom preferences folder
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/.config/iterm2"
+
+# Load the custom preferences from the custom folder
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
 ######################################################################
 # Time Machine                                                       #
 ######################################################################
