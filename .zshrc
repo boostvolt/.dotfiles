@@ -41,6 +41,10 @@ function brew() {
     fi
 }
 
+# Use Jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 # Use Starship
 # https://github.com/starship/starship
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
