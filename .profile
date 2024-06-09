@@ -25,6 +25,7 @@ function my_brew() {
 eval "$(conda "shell.$(basename "${SHELL}")" hook)"
 
 # Use Jenv
+JENV_PATH="$HOME/.jenv/bin"
 eval "$(jenv init -)"
 
 # Docker Desktop
@@ -44,4 +45,4 @@ ANDROID_EMULATOR_PATH=$ANDROID_HOME/emulator
 ANDROID_PLATFORM_TOOLS_PATH=$ANDROID_HOME/platform-tools
 
 # Update PATH
-export PATH="$HOME/.jenv/bin:$DOCKER_PATH:$RUBY_PATH:$GEM_PATH:$ANDROID_EMULATOR_PATH:$ANDROID_PLATFORM_TOOLS_PATH:$PATH"
+export PATH="$JENV_PATH:$DOCKER_PATH:$RUBY_PATH:$GEM_PATH:$ANDROID_EMULATOR_PATH:$ANDROID_PLATFORM_TOOLS_PATH:$PATH"
