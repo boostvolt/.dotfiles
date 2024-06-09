@@ -13,7 +13,7 @@
 
 [commit]
 	# Sign all commits by default.
-	gpgsign = true
+	#gpgsign = true
 
 [rebase]
 	# Automatically squash commits created with "git commit --squash" during a rebase.
