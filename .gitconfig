@@ -59,10 +59,6 @@
 	# Sets the GPG format to "ssh".
   	format = ssh
 
-[gpg "ssh"]
-	# Specifies the 1Password program to be used for SSH with GPG.
-  	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-
 [alias]
 	# Amends the last commit without changing its message.
 	amend = commit --amend --no-edit
