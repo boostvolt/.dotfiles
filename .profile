@@ -31,6 +31,9 @@ eval "$(jenv init -)"
 # Docker Desktop
 DOCKER_PATH="$HOME/.docker/bin"
 
+# Go
+GO_BIN_PATH="$(go env GOPATH)/bin"
+
 # Use Ruby installed via brew instead of system version
 RUBY_PATH="$(brew --prefix)/opt/ruby/bin"
 GEM_PATH="$HOME/.gem/bin"
@@ -45,4 +48,4 @@ ANDROID_EMULATOR_PATH=$ANDROID_HOME/emulator
 ANDROID_PLATFORM_TOOLS_PATH=$ANDROID_HOME/platform-tools
 
 # Update PATH
-export PATH="$JENV_PATH:$DOCKER_PATH:$RUBY_PATH:$GEM_PATH:$ANDROID_EMULATOR_PATH:$ANDROID_PLATFORM_TOOLS_PATH:$PATH"
+export PATH="$JENV_PATH:$DOCKER_PATH:$RUBY_PATH:$GEM_PATH:$ANDROID_EMULATOR_PATH:$ANDROID_PLATFORM_TOOLS_PATH:$GO_BIN_PATH:$PATH"
