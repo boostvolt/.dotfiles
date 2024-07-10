@@ -1,3 +1,4 @@
+tap "ariga/tap"
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -15,7 +16,6 @@ brew "cocoapods"
 brew "eza"
 brew "fastlane"
 brew "gdbm"
-brew "gh"
 brew "git"
 brew "git-lfs"
 brew "go"
@@ -26,7 +26,6 @@ brew "jenv"
 brew "kotlin"
 brew "kubeseal"
 brew "kustomize"
-brew "lazygit"
 brew "luarocks"
 brew "maclaunch"
 brew "mas"
@@ -41,20 +40,18 @@ brew "stow"
 brew "watchman"
 brew "yarn"
 brew "zsh-syntax-highlighting"
+brew "ariga/tap/atlas"
 cask "adobe-creative-cloud"
 cask "android-studio", args: { appdir: "/Applications" }
-cask "arc"
-cask "blender"
 cask "bruno", args: { appdir: "/Applications" }
 cask "citrix-workspace", args: { appdir: "/Applications" }
-cask "clion", args: { appdir: "/Applications" }
+cask "clickup"
 cask "discord", args: { appdir: "/Applications" }
 cask "docker", args: { appdir: "/Applications" }
 cask "figma", args: { appdir: "/Applications" }
 cask "intellij-idea", args: { appdir: "/Applications" }
 cask "iterm2", args: { appdir: "/Applications" }
 cask "keepassxc"
-cask "logi-options-plus"
 cask "macupdater", args: { appdir: "/Applications" }
 cask "miniconda"
 cask "monitorcontrol", args: { appdir: "/Applications" }
@@ -63,7 +60,6 @@ cask "obsidian"
 cask "sf-symbols", args: { appdir: "/Applications" }
 cask "sirimote", args: { appdir: "/Applications" }
 cask "spotify", args: { appdir: "/Applications" }
-cask "utm"
 cask "whatsapp"
 cask "zulu-jdk17"
 cask "zulu-jdk21"
@@ -71,9 +67,7 @@ mas "AdGuard for Safari", id: 1440147259
 mas "Goodnotes", id: 1444383602
 mas "Keynote", id: 409183694
 mas "Microsoft Excel", id: 462058435
-mas "Microsoft OneNote", id: 784801555
 mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Remote Desktop", id: 1295203466
 mas "Microsoft Word", id: 462054704
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
@@ -93,7 +87,6 @@ vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "github.github-vscode-theme"
 vscode "github.vscode-github-actions"
-vscode "github.vscode-pull-request-github"
 vscode "golang.go"
 vscode "graphql.vscode-graphql"
 vscode "graphql.vscode-graphql-syntax"
@@ -108,8 +101,6 @@ vscode "ms-toolsai.jupyter-keymap"
 vscode "ms-toolsai.jupyter-renderers"
 vscode "ms-toolsai.vscode-jupyter-cell-tags"
 vscode "ms-toolsai.vscode-jupyter-slideshow"
-vscode "ms-vscode.cmake-tools"
-vscode "ms-vscode.cpptools"
 vscode "ms-vscode.test-adapter-converter"
 vscode "ms-vsliveshare.vsliveshare"
 vscode "redhat.vscode-yaml"
@@ -117,7 +108,6 @@ vscode "sonarsource.sonarlint-vscode"
 vscode "swmansion.react-native-ide"
 vscode "tamasfe.even-better-toml"
 vscode "tomoki1207.pdf"
-vscode "twxs.cmake"
 vscode "unifiedjs.vscode-mdx"
 vscode "visualstudioexptteam.intellicode-api-usage-examples"
 vscode "visualstudioexptteam.vscodeintellicode"
