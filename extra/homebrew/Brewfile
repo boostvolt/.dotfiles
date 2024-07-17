@@ -8,6 +8,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "majd/repo"
 tap "mdogan/zulu"
+tap "oven-sh/bun"
 brew "automake"
 brew "azure-cli"
 brew "libyaml"
@@ -41,9 +42,11 @@ brew "watchman"
 brew "yarn"
 brew "zsh-syntax-highlighting"
 brew "ariga/tap/atlas"
+brew "oven-sh/bun/bun"
 cask "adobe-creative-cloud"
 cask "android-studio", args: { appdir: "/Applications" }
 cask "bruno", args: { appdir: "/Applications" }
+cask "chatgpt"
 cask "citrix-workspace", args: { appdir: "/Applications" }
 cask "clickup"
 cask "discord", args: { appdir: "/Applications" }
