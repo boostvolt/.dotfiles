@@ -11,3 +11,4 @@ macos:
 
 brew:
 	brew bundle --file="$(DOTFILES)/extra/homebrew/Brewfile"
+	brew autoupdate start 604800 --cleanup --upgrade

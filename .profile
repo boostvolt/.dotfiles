@@ -11,10 +11,10 @@ export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Overrides the brew command to automatically dump the Brewfile after installing or uninstalling packages.
-function my_brew() {
+function brew() {
     command brew "$@"
     case "$1" in
-        install|uninstall)
+        install|uninstall|upgrade)
             command brew bundle dump --force --file="$HOME/.dotfiles/extra/homebrew/Brewfile"
             ;;
     esac
@@ -34,6 +34,9 @@ DOCKER_PATH="$HOME/.docker/bin"
 # Go
 GO_BIN_PATH="$(go env GOPATH)/bin"
 
+# Bun
+BUN_PATH="$HOME/.bun/bin"
+
 # Use Ruby installed via brew instead of system version
 RUBY_PATH="$(brew --prefix)/opt/ruby/bin"
 GEM_PATH="$HOME/.gem/bin"
@@ -48,4 +51,4 @@ ANDROID_EMULATOR_PATH=$ANDROID_HOME/emulator
 ANDROID_PLATFORM_TOOLS_PATH=$ANDROID_HOME/platform-tools
 
 # Update PATH
-export PATH="$JENV_PATH:$DOCKER_PATH:$RUBY_PATH:$GEM_PATH:$ANDROID_EMULATOR_PATH:$ANDROID_PLATFORM_TOOLS_PATH:$GO_BIN_PATH:$PATH"
+export PATH="$JENV_PATH:$DOCKER_PATH:$RUBY_PATH:$GEM_PATH:$ANDROID_EMULATOR_PATH:$ANDROID_PLATFORM_TOOLS_PATH:$GO_BIN_PATH:$BUN_PATH:$PATH"
