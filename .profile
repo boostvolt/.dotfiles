@@ -1,45 +1,39 @@
-# Set config directories to ~/.config
-XDG_CONFIG_HOME="$HOME/.config"
+# Set config and data share directories like they should be
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_DIRS="$XDG_CONFIG_HOME:$HOME/Library/Preferences:$HOME/Library/Application Support:$HOME/Library/Preferences"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_DATA_DIRS="$XDG_DATA_HOME:$HOME/Library/Application Support"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_BIN_HOME="$HOME/.local/bin"
 
 # Set starship configuration
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
-# Load shared aliases for shells
-[[ -f ~/.aliases ]] && source ~/.aliases
-
 # Load brew shell environment
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Overrides the brew command to automatically dump the Brewfile after installing or uninstalling packages.
-function brew() {
-    command brew "$@"
-    case "$1" in
-        install|uninstall|upgrade)
-            command brew bundle dump --force --file="$HOME/.dotfiles/extra/homebrew/Brewfile"
-            ;;
-    esac
-}
-
-# Use Conda
-# https://github.com/conda/conda
-eval "$(conda "shell.$(basename "${SHELL}")" hook)"
-
-# Use Jenv
-JENV_PATH="$HOME/.jenv/bin"
-eval "$(jenv init -)"
+# Required by Jetbrains Toolbox App
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 # Docker Desktop
-DOCKER_PATH="$HOME/.docker/bin"
+export PATH="$PATH:$HOME/.docker/bin"
 
 # Go
-GO_BIN_PATH="$(go env GOPATH)/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # Bun
-BUN_PATH="$HOME/.bun/bin"
+export PATH="$PATH:$HOME/.bun/bin"
+
+# Other binaries
+export PATH="$PATH:$HOME/bin"
 
 # Use Ruby installed via brew instead of system version
-RUBY_PATH="$(brew --prefix)/opt/ruby/bin"
-GEM_PATH="$HOME/.gem/bin"
+export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
+export PATH="$PATH:$HOME/.gem/bin"
+
+# Use Conda
+eval "$(conda "shell.$(basename "${SHELL}")" hook)"
 
 # Cocoapods
 export LANG=en_US.UTF-8
@@ -49,6 +43,3 @@ export LC_ALL=en_US.UTF-8
 export ANDROID_HOME=$HOME/Library/Android/sdk
 ANDROID_EMULATOR_PATH=$ANDROID_HOME/emulator
 ANDROID_PLATFORM_TOOLS_PATH=$ANDROID_HOME/platform-tools
-
-# Update PATH
-export PATH="$JENV_PATH:$DOCKER_PATH:$RUBY_PATH:$GEM_PATH:$ANDROID_EMULATOR_PATH:$ANDROID_PLATFORM_TOOLS_PATH:$GO_BIN_PATH:$BUN_PATH:$PATH"
