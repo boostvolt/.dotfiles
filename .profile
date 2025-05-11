@@ -1,11 +1,5 @@
 # Set config and data share directories like they should be
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CONFIG_DIRS="$XDG_CONFIG_HOME:$HOME/Library/Preferences:$HOME/Library/Application Support:$HOME/Library/Preferences"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_DATA_DIRS="$XDG_DATA_HOME:$HOME/Library/Application Support"
-export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_BIN_HOME="$HOME/.local/bin"
+XDG_CONFIG_HOME="$HOME/.config"
 
 # Set starship configuration
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
