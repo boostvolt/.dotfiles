@@ -1,159 +1,121 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# https://starship.rs/config/#prompt
-format = """$shell$username\
-$hostname\
-$localip\
-$shlvl\
-$singularity\
-$kubernetes\
-$directory\
-$vcsh\
-$fossil_branch\
-$fossil_metrics\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
-$hg_branch\
-$pijul_channel\
-$docker_context\
-$package\
-$c\
-$cmake\
-$cobol\
-$daml\
-$dart\
-$deno\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$fennel\
-$golang\
-$guix_shell\
-$haskell\
-$haxe\
-$helm\
-$java\
-$julia\
-$kotlin\
-$gradle\
-$lua\
-$nim\
-$nodejs\
-$ocaml\
-$opa\
-$perl\
-$php\
-$pulumi\
-$purescript\
-$python\
-$raku\
-$rlang\
-$red\
-$ruby\
-$rust\
-$scala\
-$solidity\
-$swift\
-$terraform\
-$typst\
-$vlang\
-$vagrant\
-$zig\
-$buf\
-$nix_shell\
-$conda\
-$meson\
-$spack\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$azure\
-$direnv\
-$env_var\
-$crystal\
-$custom\
-$sudo\
-$cmd_duration\
-$line_break\
-$jobs\
-$status\
-$container\
-$character"""
+# Sets user-defined palette
+palette = "github_dark"
 
 # Inserts a blank line between shell prompts
 add_newline = true
 
-# --------------------------------------
-# ------ Statusline configuration ------
-# --------------------------------------
+# Put time on the right side
+# https://starship.rs/config/#prompt
+right_format = '''$time$battery'''
 
-[os]
-disabled = false
+# Starship modules
 
-[os.symbols]
-Macos = " 󰀵 "
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](gray)"   # For use with zsh-vi-mode
 
 [directory]
-format = "[ $path ]($style)"
-truncation_symbol = "…/"
-truncation_length = 3
+truncation_length = 4
+style = "bold blue"
 
-[git_branch]
-symbol = ""
-#truncation_length = 24
-format = "[[$symbol $branch(:$remote_branch)](fg:bright-purple)]($style) "
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"node_modules" = ""
+".github" = ""
 
-[git_status]
-deleted = "✖"
-format = "[($all_status$ahead_behind )]($style)"
+[[battery.display]]
+threshold = 10
+style = 'red'
 
-[cmd_duration]
-format = "[$duration]($style)"
+[[battery.display]]
+threshold = 30
+style = 'yellow'
 
-# -----------------------------------
-# ------ Language integrations ------
-# -----------------------------------
+[time]
+disabled = false
+time_format = "%R"                         # Hour:Minute Format
+style = "fg:yellow"
+format = '[[   $time ](fg:gray)]($style)'
 
 [package]
-format = '[$version](fg:white) '
+disabled = true
 
-[python]
-symbol = ""
-format = '| [[$symbol ($version)](fg:yellow)]($style) '
+# Languages and indicator styles
 
-[nodejs]
-symbol = ""
-format = '| [[$symbol ($version)](fg:green)]($style) '
+[git_branch]
+style = "orange"
 
-[golang]
-symbol = ""
-format = '| [[$symbol ($version)](fg:bright-blue)]($style) '
-
-[java]
-symbol = ""
-format = '| [[$symbol ($version)](fg:bright-red)]($style) '
-
-[bun]
-symbol = ""
-
-[kotlin]
-symbol = ""
-
-[scala]
-symbol = ""
-
-[rust]
-symbol = ""
-format = '| [[$symbol ($version)](fg:red)]($style) '
-
-[gradle]
-symbol = ""
-format = '| [[$symbol ($version)](fg:yellow)]($style) '
+[git_status]
+style = "red"
 
 [docker_context]
 disabled = true
+
+[java]
+symbol = "☕"
+version_format = "${major}"
+style = "orange"
+
+[nodejs]
+symbol = " "
+version_format = "${major}"
+style = "green"
+
+[golang]
+symbol = " "
+version_format = "${major}.${minor}"
+style = "blue"
+
+[elixir]
+symbol = " "
+version_format = "${major}.${minor}"
+style = "violet"
+
+[erlang]
+symbol = "  "
+version_format = "${major}"
+style = "pink"
+
+[gradle]
+symbol = " "
+version_format = "${major}"
+style = "blue"
+
+[kotlin]
+symbol = " "
+version_format = "${major}"
+style = "violet"
+
+[scala]
+symbol = " "
+style = "orange"
+
+[rust]
+symbol = " "
+style = "red"
+
+[bun]
+symbol = " "
+style = "pink"
+
+[nix_shell]
+symbol = "❄️ "
+style = "blue"
+
+# Palette definitions
+
+[palettes.github_dark]
+blue = "#4493f8"
+green = "#3fb950"
+yellow = "#d29922"
+orange = "#000000ff"
+red = "#f85149"
+violet = "#ab7df8"
+pink = "#db61a2"
+gray = "#59636e"

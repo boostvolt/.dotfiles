@@ -9,7 +9,7 @@ setopt appendhistory sharehistory hist_ignore_space hist_ignore_all_dups hist_sa
 eval "$(zoxide init zsh)"
 
 # Initialize ZSH syntax highlighting
-# https://github.com/zsh-users/zsh-syntax-highlighting
+# https://github.com/zsh-users/zsh-syntax-highlighting?tab=readme-ov-file
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Initialize ZSH autocompletions like fish
@@ -23,8 +23,6 @@ autoload -U +X bashcompinit && bashcompinit
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
   autoload -Uz compinit
   compinit
-  # terraform autocompletions
-  complete -o nospace -C /opt/homebrew/bin/terraform terraform
 fi
 
 # Load shared aliases for shells
@@ -37,6 +35,16 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 export SDKMAN_DIR="${HOME}/.sdkman"
 [ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
 
-# Use Starship
-# https://github.com/starship/starship
+# Initialize starship - https://starship.rs/
 eval "$(starship init zsh)"
+
+# Initialize direnv - https://direnv.net/
+eval "$(direnv hook zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/jankott/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

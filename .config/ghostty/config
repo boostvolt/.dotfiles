@@ -1,0 +1,15 @@
+# basic ui configuration
+theme = light:GitHub Light Default,dark:GitHub Dark Default
+cursor-style = block
+cursor-color = #777777
+cursor-opacity = 0.9
+cursor-text = #FFFFFF
+font-family = "GeistMono Nerd Font Mono"
+window-padding-color = background
+window-padding-x = 10,10
+window-padding-y = 10,10
+
+# keybindings
+keybind = alt+left=esc:B
+keybind = alt+right=esc:F
+keybind = shift+enter=text:\x1b\r

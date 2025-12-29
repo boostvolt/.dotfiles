@@ -8,12 +8,12 @@
 	path = ~/.gitconfig-swisscom
 
 [user]
-	# Set the default name for git to use when creating new commits.
-	name = Jan Kott
+  	email = 51777660+boostvolt@users.noreply.github.com
+	signingkey = /Users/jankott/.ssh/id_github.pub
 
 [commit]
 	# Sign all commits by default.
-	#gpgsign = true
+	gpgsign = true
 
 [rebase]
 	# Automatically squash commits created with "git commit --squash" during a rebase.
@@ -57,8 +57,10 @@
 
 [gpg]
 	# Sets the GPG format to "ssh".
-  	format = ssh
+	format = ssh
 
 [alias]
 	# Amends the last commit without changing its message.
 	amend = commit --amend --no-edit
+[credential]
+	helper = store

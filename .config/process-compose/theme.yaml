@@ -1,0 +1,36 @@
+style:
+  name: "GitHub Dark Default"
+  body:
+    fgColor: transparent
+    bgColor: transparent
+    secondaryTextColor: "#59636e"
+    tertiaryTextColor: "#3fb950"
+    borderColor: "#59636e"
+  stat_table:
+    keyFgColor: "#4493f8"
+    valueFgColor: transparent
+    logoColor: transparent
+  proc_table:
+    fgColor: "#4493f8"
+    fgWarning: "#d29922"
+    fgPending: "#59636e"
+    fgCompleted: "#3fb950"
+    fgError: "#f85149"
+    headerFgColor: "#d29922"
+  help:
+    fgColor: "#59636e"
+    keyColor: "#4493f8"
+    hlColor: transparent
+    categoryFgColor: "#d29922"
+  dialog:
+    fgColor: black
+    bgColor: black
+    contrastBgColor: black
+    attentionBgColor: "#f85149"
+    buttonFgColor: transparent
+    buttonBgColor: "#4493f8"
+    buttonFocusFgColor: transparent
+    buttonFocusBgColor: "#d29922"
+    labelFgColor: "#d29922"
+    fieldFgColor: transparent
+    fieldBgColor: "#59636e"
