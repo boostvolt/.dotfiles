@@ -4,13 +4,17 @@ alias ls='eza --git --icons --color=always --group-directories-first'
 # Alias ll to a better variant
 alias ll='ls -la'
 
-# Convenience for lazygit
+# Convenience for git & lazygit
+alias g='git'
 alias lg='lazygit'
 
 # Always use nvim
 alias vim='nvim'
 alias vi='nvim'
-alias v='nvim'
+
+# Devbox alias
+alias d='devbox'
+alias d-up='devbox services up'
 
 # Useful parent cd aliases
 alias ..='cd ..'

@@ -29,6 +29,9 @@ style = "bold blue"
 "node_modules" = ""
 ".github" = ""
 
+[battery]
+disabled = true
+
 [[battery.display]]
 threshold = 10
 style = 'red'
@@ -38,7 +41,7 @@ threshold = 30
 style = 'yellow'
 
 [time]
-disabled = false
+disabled = true
 time_format = "%R"                         # Hour:Minute Format
 style = "fg:yellow"
 format = '[[   $time ](fg:gray)]($style)'
@@ -101,7 +104,7 @@ symbol = " "
 style = "red"
 
 [bun]
-symbol = " "
+symbol = " "
 style = "pink"
 
 [nix_shell]
@@ -114,7 +117,7 @@ style = "blue"
 blue = "#4493f8"
 green = "#3fb950"
 yellow = "#d29922"
-orange = "#000000ff"
+orange = "#db6d28"
 red = "#f85149"
 violet = "#ab7df8"
 pink = "#db61a2"

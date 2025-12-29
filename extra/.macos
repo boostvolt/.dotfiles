@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -13,6 +12,12 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
 ######################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input        #
 ######################################################################
@@ -25,8 +30,20 @@ defaults write -g InitialKeyRepeat -int 13 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
 
 ######################################################################
+# Screen                                                             #
+######################################################################
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+
+######################################################################
 # Finder Settings                                                    #
 ######################################################################
+
+# Show file path bar at the bottom
+defaults write com.apple.finder "ShowPathbar" -bool "true"
 
 # Set default view mode to list mode
 defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
@@ -58,20 +75,30 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.finder "ShowHardDrivesOnDesktop" -bool "true"
 
 ######################################################################
-# Terminal & iTerm 2                                                 #
+# Mail                                                               #
+######################################################################
+
+# Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+# Disable inline attachments (just show the icons)
+defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
+
+######################################################################
+# Terminal                                               			 #
 ######################################################################
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
+# Enable Secure Keyboard Entry in Terminal.app
+# See: https://security.stackexchange.com/a/47786/8918
+defaults write com.apple.terminal SecureKeyboardEntry -bool true
+
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
-# Set the custom preferences folder
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/.config/iterm2"
 
-# Load the custom preferences from the custom folder
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
 ######################################################################
 # Time Machine                                                       #
