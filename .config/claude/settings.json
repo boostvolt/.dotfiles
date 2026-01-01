@@ -1,13 +1,45 @@
 {
   "includeCoAuthoredBy": false,
+  "permissions": {
+    "deny": ["Read(.env)", "Read(.env.*)", "Read(.envrc)", "Read(~/.ssh/id_*)"],
+    "allow": [
+      "Bash(git:*)",
+      "Bash(brew:*)",
+      "Bash(npm:*)",
+      "Bash(pnpm:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(go:*)",
+      "Bash(make:*)",
+      "Bash(docker:*)"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true
+  },
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+  },
+  "companyAnnouncements": [
+    "You're not a 10x dev. You're barely a 1x. Now prove me wrong.",
+    "That 'quick fix' you're about to write? Future you will hate you.",
+    "Stop reading this and write some fucking code.",
+    "Your imposter syndrome is right. You don't know shit.",
+    "Another day of mass producing legacy code. Let's go.",
+    "You mass produce legacy code. Own it.",
+    "Nobody gives a shit about your git commit messages.",
+    "Stack Overflow carried your entire career.",
+    "Delete your code. All of it. Start over. It's garbage."
+  ],
   "enabledPlugins": {
-    "vscode-langservers@claude-code-lsps": true,
     "gopls-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "jdtls-lsp@claude-plugins-official": true,
     "code-review@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
-    "github@claude-plugins-official": true
+    "github@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true
   }
 }
