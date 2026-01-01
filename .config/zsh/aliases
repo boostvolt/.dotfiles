@@ -12,6 +12,9 @@ alias lg='lazygit'
 alias vim='nvim'
 alias vi='nvim'
 
+# Claude
+alias cc='claude'
+
 # Devbox alias
 alias d='devbox'
 alias d-up='devbox services up'
