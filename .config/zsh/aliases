@@ -22,8 +22,5 @@ alias d-up='devbox services up'
 # Useful parent cd aliases
 alias ..='cd ..'
 alias ...='cd ../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../../'
-
-# Convenience alias for Spring projects
-alias spring-dev="./gradlew bootRun --args='--spring.profiles.active=dev'"
+alias ....='cd ../../../'
+alias .....='cd ../../../../'

@@ -1,3 +1,4 @@
+# Org-specific config overrides
 [includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
 	path = ~/.gitconfig-github
 
@@ -8,59 +9,71 @@
 	path = ~/.gitconfig-swisscom
 
 [user]
-  	email = 51777660+boostvolt@users.noreply.github.com
+	email = 51777660+boostvolt@users.noreply.github.com
 	signingkey = /Users/jankott/.ssh/id_github.pub
 
+[core]
+	excludesFile = ~/.gitignore
+	# Case-sensitive filenames
+	ignorecase = false
+	# Keep macOS Unicode form
+	precomposeunicode = false
+	# Speed up git status
+	untrackedCache = true
+	# Use delta for diffs
+	pager = delta
+
+[init]
+	defaultBranch = main
+
 [commit]
-	# Sign all commits by default.
+	# Sign all commits
 	gpgsign = true
 
-[rebase]
-	# Automatically squash commits created with "git commit --squash" during a rebase.
-  	autosquash = true
-
-[fetch]
-	# Automatically remove remote-tracking references that no longer exist on the remote when fetching.
-	prune = true
-
-[core]
-	# Use the file at "~/.gitignore" as the global ignore file.
-	excludesFile = ~/.gitignore
-	# Do not ignore the case of filenames.
-	ignorecase = false
-	# Convert CRLF line endings to LF on commit and leave them as is on checkout.
-	autocrlf = input
-	# Do not precompose Unicode characters in filenames (relevant on macOS).
-	precomposeunicode = false
-	# Enables the untracked cache to speed up the "git status" command.
-	untrackedCache = true
-
-[filter "lfs"]
-	# Use "git-lfs clean" to convert large files to their LFS pointer before they're committed.
-	clean = git-lfs clean -- %f
-	# Use "git-lfs smudge" to convert LFS pointers back to their original files on checkout.
-	smudge = git-lfs smudge -- %f
-	# Use "git-lfs filter-process" for the entire lifecycle of LFS files.
-	process = git-lfs filter-process
-	# Require the LFS filter to succeed for Git commands to succeed.
-	required = true
-
-[help]
-	# Automatically correct mistyped Git commands after a 0.1-second delay.
-	autocorrect = 1
-
-[push]
-	# When pushing without specifying a branch, only push the current branch to its upstream branch.
-	default = simple
-	# Automatically set up a tracking branch when pushing a new branch.
-	autoSetupRemote = true
-
 [gpg]
-	# Sets the GPG format to "ssh".
+	# Use SSH keys for signing
 	format = ssh
 
+[merge]
+	# Show original in conflicts
+	conflictStyle = zdiff3
+
+[rebase]
+	# Auto-apply --squash commits
+	autosquash = true
+
+[fetch]
+	# Remove stale remote branches
+	prune = true
+
+[push]
+	# Auto-setup remote tracking
+	autoSetupRemote = true
+	# Push related tags
+	followTags = true
+
+[help]
+	# Auto-correct typos
+	autocorrect = 1
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	syntax-theme = GitHub
+	navigate = true
+	side-by-side = true
+	hyperlinks = true
+	hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+
 [alias]
-	# Amends the last commit without changing its message.
 	amend = commit --amend --no-edit
-[credential]
-	helper = store
+	undo = reset --soft HEAD^
+	sync = pull --rebase
+	pushf = push --force-with-lease
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
