@@ -11,7 +11,12 @@
       "Bash(node:*)",
       "Bash(go:*)",
       "Bash(make:*)",
-      "Bash(docker:*)"
+      "Bash(docker:*)",
+      "WebFetch(domain:*.github.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:*.githubusercontent.com)",
+      "WebFetch(domain:*.go.dev)",
+      "WebFetch(domain:go.dev)"
     ]
   },
   "sandbox": {
@@ -19,7 +24,8 @@
     "autoAllowBashIfSandboxed": true
   },
   "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "1"
   },
   "companyAnnouncements": [
     "You're not a 10x dev. You're barely a 1x. Now prove me wrong.",
