@@ -1,5 +1,8 @@
 {
-  "includeCoAuthoredBy": false,
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "deny": ["Read(.env)", "Read(.env.*)", "Read(.envrc)", "Read(~/.ssh/id_*)"],
     "allow": [
@@ -19,13 +22,9 @@
       "WebFetch(domain:go.dev)"
     ]
   },
-  "sandbox": {
-    "enabled": true,
-    "autoAllowBashIfSandboxed": true
-  },
   "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
-    "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "1"
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_TELEMETRY": "1"
   },
   "companyAnnouncements": [
     "You're not a 10x dev. You're barely a 1x. Now prove me wrong.",
