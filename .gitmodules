@@ -1,0 +1,3 @@
+[submodule "git-worktree-runner"]
+	path = git-worktree-runner
+	url = https://github.com/coderabbitai/git-worktree-runner.git

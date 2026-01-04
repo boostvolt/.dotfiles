@@ -77,3 +77,14 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[gtr "editor"]
+	default = vscode
+
+[gtr "ai"]
+	default = claude
+	
+[gtr "copy"]
+	include = **/CLAUDE.md
+	include = **/.env.example
+	exclude = **/.env
