@@ -1,11 +1,13 @@
 {
-  "spinnerTipsEnabled": false,
+  "env": {
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_TELEMETRY": "1"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
   },
   "permissions": {
-    "deny": ["Read(.env)", "Read(.env.*)", "Read(.envrc)", "Read(~/.ssh/id_*)"],
     "allow": [
       "Bash(git:*)",
       "Bash(brew:*)",
@@ -21,12 +23,29 @@
       "WebFetch(domain:*.githubusercontent.com)",
       "WebFetch(domain:*.go.dev)",
       "WebFetch(domain:go.dev)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(.envrc)",
+      "Read(~/.ssh/id_*)"
     ]
   },
-  "env": {
-    "DISABLE_ERROR_REPORTING": "1",
-    "DISABLE_TELEMETRY": "1"
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "jdtls-lsp@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "ralph-wiggum@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true
   },
+  "spinnerTipsEnabled": false,
   "companyAnnouncements": [
     "You're not a 10x dev. You're barely a 1x. Now prove me wrong.",
     "That 'quick fix' you're about to write? Future you will hate you.",
@@ -37,15 +56,5 @@
     "Nobody gives a shit about your git commit messages.",
     "Stack Overflow carried your entire career.",
     "Delete your code. All of it. Start over. It's garbage."
-  ],
-  "enabledPlugins": {
-    "gopls-lsp@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "jdtls-lsp@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
-    "github@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true
-  }
+  ]
 }
