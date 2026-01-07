@@ -67,24 +67,12 @@
 	hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 
 [alias]
-	amend = commit --amend --no-edit
-	undo = reset --soft HEAD^
-	sync = pull --rebase
-	pushf = push --force-with-lease
+	modify = "!f() { git commit --amend \"$@\" && git rebase --update-refs HEAD~1; }; f"
+	sync = "!f() { remote=$(git remote | head -1); trunk=${1:-main}; git fetch $remote && git rebase $remote/$trunk --update-refs && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D; }; f"
+	submit = "!f() { remote=$(git remote | head -1); git push -u $remote HEAD --force-with-lease && if gh pr view HEAD >/dev/null 2>&1; then echo 'PR exists'; gh pr view --web; else gh pr create --fill; fi; }; f"
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-
-[gtr "editor"]
-	default = vscode
-
-[gtr "ai"]
-	default = claude
-	
-[gtr "copy"]
-	include = **/CLAUDE.md
-	include = **/.env.example
-	exclude = **/.env
