@@ -1,5 +1,6 @@
 {
   "env": {
+    "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "1",
     "DISABLE_ERROR_REPORTING": "1",
     "DISABLE_TELEMETRY": "1"
   },
@@ -24,12 +25,7 @@
       "WebFetch(domain:*.go.dev)",
       "WebFetch(domain:go.dev)"
     ],
-    "deny": [
-      "Read(.env)",
-      "Read(.env.*)",
-      "Read(.envrc)",
-      "Read(~/.ssh/id_*)"
-    ]
+    "deny": ["Read(.env)", "Read(.env.*)", "Read(.envrc)", "Read(~/.ssh/id_*)"]
   },
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
@@ -41,8 +37,8 @@
     "pyright-lsp@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
-    "ralph-wiggum@claude-plugins-official": true,
-    "commit-commands@claude-plugins-official": true
+    "commit-commands@claude-plugins-official": true,
+    "ralph-loop@claude-plugins-official": true
   },
   "spinnerTipsEnabled": false,
   "companyAnnouncements": [
