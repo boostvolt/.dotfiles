@@ -50,6 +50,6 @@ make update
 > [!IMPORTANT]
 > The git configurations are **not** automatically synced as they requires additional (sensitive) information. Please follow the next steps.
 
-- Create the corresponding `.gitconfig` files for each remote repository in your home directory (e.g., `.gitconfig-github`, `.gitconfig-swisscom`, `.gitconfig-zhaw`).
+- Create the corresponding `.gitconfig` files for each remote repository in your home directory (e.g., `.gitconfig-github`, `.gitconfig-zhaw`).
 - In each `.gitconfig` file, add your email, and signing key under the `[user]` section.
 - Save the files to the home directory.
