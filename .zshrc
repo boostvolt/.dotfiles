@@ -11,3 +11,6 @@ for conf in "$XDG_CONFIG_HOME/zsh/config.d/"*.sh; do
   source "${conf}"
 done
 unset conf
+
+# Load local overrides (machine-specific, not tracked in git)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

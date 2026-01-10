@@ -6,50 +6,21 @@ palette = "github_dark"
 # Inserts a blank line between shell prompts
 add_newline = true
 
-# Put time on the right side
-# https://starship.rs/config/#prompt
-right_format = '''$time$battery'''
-
 # Starship modules
 
 [character]
 success_symbol = "[❯](green)"
 error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](gray)"   # For use with zsh-vi-mode
+vimcmd_symbol = "[❮](gray)"
 
 [directory]
 truncation_length = 4
 style = "bold blue"
 
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-"node_modules" = ""
-".github" = ""
-
-[battery]
-disabled = true
-
-[[battery.display]]
-threshold = 10
-style = 'red'
-
-[[battery.display]]
-threshold = 30
-style = 'yellow'
-
-[time]
-disabled = true
-time_format = "%R"                         # Hour:Minute Format
-style = "fg:yellow"
-format = '[[   $time ](fg:gray)]($style)'
-
 [package]
 disabled = true
 
-# Languages and indicator styles
+# Git
 
 [git_branch]
 style = "orange"
@@ -60,55 +31,38 @@ style = "red"
 [docker_context]
 disabled = true
 
-[java]
-symbol = "☕"
-version_format = "${major}"
-style = "orange"
+# Languages
 
-[nodejs]
-symbol = " "
-version_format = "${major}"
-style = "green"
+[c]
+symbol = " "
+style = "blue"
 
 [golang]
-symbol = " "
-version_format = "${major}.${minor}"
+symbol = " "
 style = "blue"
-
-[elixir]
-symbol = " "
-version_format = "${major}.${minor}"
-style = "violet"
-
-[erlang]
-symbol = "  "
-version_format = "${major}"
-style = "pink"
 
 [gradle]
-symbol = " "
-version_format = "${major}"
+symbol = " "
 style = "blue"
+
+[java]
+symbol = " "
+style = "orange"
 
 [kotlin]
 symbol = " "
-version_format = "${major}"
 style = "violet"
 
-[scala]
-symbol = " "
-style = "orange"
-
-[rust]
-symbol = " "
-style = "red"
+[python]
+symbol = " "
+style = "yellow"
 
 [bun]
 symbol = " "
 style = "pink"
 
 [nix_shell]
-symbol = "❄️ "
+symbol = "󱄅 "
 style = "blue"
 
 # Palette definitions
