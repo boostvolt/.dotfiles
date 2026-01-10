@@ -5,9 +5,6 @@
 [includeIf "hasconfig:remote.*.url:git@github.zhaw.ch:*/**"]
 	path = ~/.gitconfig-zhaw
 
-[includeIf "hasconfig:remote.*.url:git@git.swisscom.com:*/**"]
-	path = ~/.gitconfig-swisscom
-
 [user]
 	email = 51777660+boostvolt@users.noreply.github.com
 	signingkey = /Users/jankott/.ssh/id_github.pub
