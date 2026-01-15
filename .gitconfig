@@ -1,13 +1,6 @@
-# Org-specific config overrides
-[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
-	path = ~/.gitconfig-github
-
-[includeIf "hasconfig:remote.*.url:git@github.zhaw.ch:*/**"]
-	path = ~/.gitconfig-zhaw
-
 [user]
 	email = 51777660+boostvolt@users.noreply.github.com
-	signingkey = /Users/jankott/.ssh/id_github.pub
+	signingkey = ~/.ssh/id_github.pub
 
 [core]
 	excludesFile = ~/.gitignore
@@ -62,14 +55,6 @@
 	side-by-side = true
 	hyperlinks = true
 	hyperlinks-file-link-format = "vscode://file/{path}:{line}"
-
-[alias]
-	# Amend current commit and update dependent stacked branches
-	modify = "!f() { git commit --amend \"$@\" && git rebase --update-refs HEAD~1; }; f"
-	# Rebase on trunk (default: main), prune gone branches
-	sync = "!f() { remote=$(git remote | head -1); trunk=${1:-main}; git fetch $remote && git rebase $remote/$trunk --update-refs && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D; }; f"
-	# Push and open/view PR (creates if doesn't exist)
-	submit = "!f() { remote=$(git remote | head -1); git push -u $remote HEAD --force-with-lease && if gh pr view HEAD >/dev/null 2>&1; then echo 'PR exists'; gh pr view --web; else gh pr create --fill; fi; }; f"
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
