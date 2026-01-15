@@ -10,6 +10,8 @@
   },
   "permissions": {
     "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
       "Bash(npm:*)",
       "Bash(pnpm:*)",
       "Bash(npx:*)",
