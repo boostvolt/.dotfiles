@@ -30,6 +30,11 @@ fi
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
+# Android SDK
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+
 # Cocoapods settings
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8

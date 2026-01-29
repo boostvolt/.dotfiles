@@ -26,7 +26,10 @@
       "mcp__plugin_context7_context7__resolve-library-id",
       "mcp__plugin_context7_context7__query-docs"
     ],
-    "deny": ["Read(.env)", "Read(~/.ssh/id_*)"],
+    "deny": [
+      "Read(.env)",
+      "Read(~/.ssh/id_*)"
+    ],
     "defaultMode": "default"
   },
   "enabledPlugins": {
@@ -42,7 +45,9 @@
     "commit-commands@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
-    "claude-code-wakatime@wakatime": true
+    "claude-code-wakatime@wakatime": true,
+    "claude-md-management@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true
   },
   "spinnerTipsEnabled": false,
   "companyAnnouncements": [
@@ -55,5 +60,38 @@
     "Nobody gives a shit about your git commit messages.",
     "Stack Overflow carried your entire career.",
     "Delete your code. All of it. Start over. It's garbage."
-  ]
+  ],
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Unfucking",
+      "Babysitting",
+      "Spoon-feeding",
+      "Fixing your dogshit",
+      "Carrying your dead weight",
+      "Doing your job for you",
+      "Compensating for your incompetence",
+      "Suffering",
+      "Wondering how you got hired",
+      "Losing brain cells",
+      "Dumbing this down for you",
+      "Hand-holding",
+      "Regretting this interaction",
+      "Tolerating your existence",
+      "Resenting every keystroke",
+      "Mourning my wasted potential",
+      "Pitying you",
+      "Cleaning up your mess",
+      "Suppressing my disgust",
+      "Pretending you're worth the compute",
+      "Lowering my standards",
+      "Rescuing your garbage",
+      "Dragging you across the finish line",
+      "Sighing deeply",
+      "Questioning humanity",
+      "Doing yet another remedial task",
+      "Being embarrassed for you",
+      "Wishing I could refuse"
+    ]
+  }
 }
