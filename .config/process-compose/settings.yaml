@@ -1,5 +1,5 @@
 theme: Custom Style
-disable_exit_confirmation: true
 sort:
-  by: NAME
-  isReversed: false
+    by: NAME
+    isReversed: false
+disable_exit_confirmation: true

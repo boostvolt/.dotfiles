@@ -55,7 +55,7 @@ make verify
 
 | Target    | Description                                      |
 | --------- | ------------------------------------------------ |
-| `install` | Symlink dotfiles and setup Claude settings       |
+| `install` | Symlink dotfiles |
 | `update`  | Adopt local changes back into dotfiles repo      |
 | `macos`   | Apply macOS system preferences                   |
 | `brew`    | Install Homebrew packages and enable autoupdate  |
