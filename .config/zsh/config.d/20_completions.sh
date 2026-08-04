@@ -1,15 +1,17 @@
-# Add brew completions to FPATH
-if [[ -n "$HOMEBREW_PREFIX" ]]; then
-  FPATH="$HOMEBREW_PREFIX/share/zsh-completions:$FPATH"
+typeset -U fpath
+
+if [[ -n ${HOMEBREW_PREFIX:-} &&
+      -d "$HOMEBREW_PREFIX/share/zsh/site-functions" ]]; then
+  fpath=(
+    "$HOMEBREW_PREFIX/share/zsh/site-functions"
+    $fpath
+  )
 fi
 
-# Initialize completion system with caching
 autoload -Uz compinit
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-  compinit
-else
-  compinit -C
-fi
+
+mkdir -p "$XDG_CACHE_HOME/zsh"
+compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 
 # Case-insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'

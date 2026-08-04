@@ -10,8 +10,6 @@
 	precomposeunicode = false
 	# Speed up git status
 	untrackedCache = true
-	# Use delta for diffs
-	pager = delta
 
 [init]
 	defaultBranch = main
@@ -45,16 +43,6 @@
 [help]
 	# Auto-correct typos
 	autocorrect = 1
-
-[interactive]
-	diffFilter = delta --color-only
-
-[delta]
-	syntax-theme = GitHub
-	navigate = true
-	side-by-side = true
-	hyperlinks = true
-	hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f

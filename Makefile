@@ -1,25 +1,10 @@
-DOTFILES=${HOME}/.dotfiles
+.PHONY: install dry-run check
 
-.PHONY: install update macos brew verify
+install: check
+	stow --verbose --restow --target="$(HOME)" .
 
-install:
-	stow -v --restow --target="$(HOME)" --dir="$(DOTFILES)" .
+dry-run: check
+	stow --simulate --verbose --restow --target="$(HOME)" .
 
-update:
-	stow -v --restow --adopt .
-
-macos:
-	$(DOTFILES)/extra/.macos
-
-brew:
-	brew bundle --file="$(DOTFILES)/extra/homebrew/Brewfile"
-	brew autoupdate start 604800 --cleanup --upgrade
-
-verify:
-	@echo "Verifying dotfiles installation..."
-	@test -L "$(HOME)/.zshrc" || (echo "ERROR: .zshrc not symlinked" && exit 1)
-	@test -L "$(HOME)/.zprofile" || (echo "ERROR: .zprofile not symlinked" && exit 1)
-	@test -L "$(HOME)/.gitconfig" || (echo "ERROR: .gitconfig not symlinked" && exit 1)
-	@command -v stow >/dev/null || (echo "ERROR: stow not found" && exit 1)
-	@command -v brew >/dev/null || (echo "ERROR: brew not found" && exit 1)
-	@echo "All checks passed"
+check:
+	zsh -n .zprofile .zshrc .config/zsh/config.d/*.sh

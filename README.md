@@ -1,106 +1,38 @@
 # Dotfiles
 
-Personalized dotfiles for Unix and macOS systems, providing a tailored environment setup for efficient and comfortable usage.
+Personal macOS dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-## Requirements
 
-- [Git](https://git-scm.com/)
-- [Stow](https://www.gnu.org/software/stow/)
-- [Make](https://www.gnu.org/software/make/)
+## Setup
 
-## Installation
-
-### 1. Install required software
+Install the configured tools:
 
 ```sh
-xcode-select --install
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install stow make
+brew install stow eza neovim gh git-lfs direnv fnm starship \
+  zsh-autosuggestions zsh-syntax-highlighting
+brew install --cask ghostty
 ```
 
-### 2. Clone Repository
+Authenticate GitHub CLI and select SSH without uploading a new key:
 
 ```sh
-git clone git@github.com:boostvolt/.dotfiles.git
-cd .dotfiles
+gh auth login --hostname github.com --git-protocol ssh --web --skip-ssh-key
 ```
 
-### 3. Apply macOS configuration
+Clone and install:
 
 ```sh
-make macos
-```
-
-### 4. Install Homebrew packages
-
-```sh
-make brew
-```
-
-### 5. Apply or update setup configuration
-
-```sh
+git clone git@github.com:boostvolt/.dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+make dry-run
 make install
-# ... or incremental update via:
-make update
+exec zsh
 ```
 
-### 6. Verify installation
+## Commands
 
 ```sh
-make verify
-```
-
-## Make Targets
-
-| Target    | Description                                      |
-| --------- | ------------------------------------------------ |
-| `install` | Symlink dotfiles |
-| `update`  | Adopt local changes back into dotfiles repo      |
-| `macos`   | Apply macOS system preferences                   |
-| `brew`    | Install Homebrew packages and enable autoupdate  |
-| `verify`  | Validate symlinks and required tools are present |
-
-## Local Overrides
-
-For machine-specific configuration that shouldn't be tracked in git:
-
-- `~/.zprofile.local` - Environment variables, PATH additions
-- `~/.zshrc.local` - Shell aliases, functions, local settings
-
-These files are sourced automatically if they exist.
-
-## Troubleshooting
-
-### Symlinks not created
-
-```sh
-# Check if stow is working
-stow --version
-
-# Re-run install with verbose output
-stow -v --restow --target="$HOME" --dir="$HOME/.dotfiles" .
-```
-
-### Conflicting files
-
-If stow fails due to existing files:
-
-```sh
-# Backup and remove conflicting file
-mv ~/.zshrc ~/.zshrc.backup
-
-# Re-run install
-make install
-```
-
-### Verification fails
-
-```sh
-# Run verify to see which checks fail
-make verify
-
-# Common fixes:
-# - Re-run `make install` if symlinks are missing
-# - Run `brew bundle --file=extra/homebrew/Brewfile` if tools are missing
+make install  # Install or refresh symlinks
+make dry-run  # Preview changes
+make check    # Validate Zsh syntax
 ```
