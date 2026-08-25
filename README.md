@@ -8,7 +8,7 @@ Personal macOS dotfiles managed with [GNU Stow](https://www.gnu.org/software/sto
 Install the configured tools:
 
 ```sh
-brew install stow eza neovim gh git-lfs direnv fnm starship \
+brew install stow eza neovim gh git-lfs fnm starship \
   zsh-autosuggestions zsh-syntax-highlighting
 brew install --cask ghostty
 ```
