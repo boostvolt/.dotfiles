@@ -3,6 +3,9 @@
 .env.local
 .env.*.local
 
+### Nix local configuration ###
+.config/nix/nix.local.conf
+
 ### Node ###
 # Logs
 logs
