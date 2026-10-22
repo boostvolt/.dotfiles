@@ -1,6 +1,6 @@
 [user]
 	email = 51777660+boostvolt@users.noreply.github.com
-	signingkey = ~/.ssh/id_github.pub
+	signingkey = ~/.ssh/id_github
 
 [core]
 	excludesFile = ~/.gitignore
@@ -21,6 +21,10 @@
 [gpg]
 	# Use SSH keys for signing
 	format = ssh
+
+[gpg "ssh"]
+	# Secure Enclave signing
+	program = ~/.ssh/ssh-keygen-enclave
 
 [merge]
 	# Show original in conflicts
