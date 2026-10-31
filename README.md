@@ -8,7 +8,7 @@ Personal macOS dotfiles managed with [GNU Stow](https://www.gnu.org/software/sto
 Install the configured tools:
 
 ```sh
-brew install stow eza gh starship \
+brew install stow gh starship \
   zsh-autosuggestions zsh-syntax-highlighting
 brew install --cask ghostty
 ```

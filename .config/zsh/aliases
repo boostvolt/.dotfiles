@@ -1,7 +1,4 @@
-# Better ls command
-alias ls='eza --git --icons --color=always --group-directories-first'
-
-# Alias ll to a better variant
+# Detailed directory listing
 alias ll='ls -la'
 
 # Useful parent cd aliases
