@@ -24,7 +24,7 @@
 
 [gpg "ssh"]
 	# Secure Enclave signing
-	program = ~/.ssh/ssh-keygen-enclave
+	program = ssh-keygen-enclave
 
 [merge]
 	# Show original in conflicts
@@ -47,9 +47,3 @@
 [help]
 	# Auto-correct typos
 	autocorrect = 1
-
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
