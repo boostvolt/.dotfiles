@@ -21,14 +21,6 @@ path=(
 # Telemetry opt-out for tools that support it
 export DO_NOT_TRACK=1
 
-# Preferred editor
-if [[ -z $SSH_CONNECTION ]] && (( $+commands[nvim] )); then
-  export EDITOR=nvim
-else
-  export EDITOR=vim
-fi
-export VISUAL="$EDITOR"
-
 # Locale
 export LANG=en_US.UTF-8
 
