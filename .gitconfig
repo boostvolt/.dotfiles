@@ -47,3 +47,6 @@
 [help]
 	# Auto-correct typos
 	autocorrect = 1
+
+[credential]
+	helper = osxkeychain
